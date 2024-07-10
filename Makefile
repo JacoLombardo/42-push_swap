@@ -6,7 +6,7 @@
 #    By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/08 12:40:11 by jalombar          #+#    #+#              #
-#    Updated: 2024/05/21 12:11:52 by jalombar         ###   ########.fr        #
+#    Updated: 2024/07/10 14:35:54 by jalombar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,28 +16,27 @@ SRCS = push_swap.c
 OBJS = $(SRCS:.c=.o)
 HEADER = push_swap.h
 NAME = push_swap
-LIBFTNAME = libft.a
-LIBFTDIR = ./libft
+LIBFT_PATH = libft
+LIBFT = $(LIBFT_PATH)/libft.a
 
 all: $(NAME)
 
-makelibft:
-	make -C $(LIBFTDIR)
-	cp $(LIBFTDIR)/$(LIBFTNAME) .
-	mv $(LIBFTNAME) $(NAME)
 
-$(NAME): makelibft $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+$(NAM): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) -o $@ $(OBJS) -L$(LIBFT_PATH) -lft
 
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
-	
+
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_PATH)
+
 clean:
+	$(MAKE) -C $(LIBFT_PATH) clean
 	rm -f $(OBJS)
-	cd $(LIBFTDIR) && make clean
 
 fclean: clean
+	$(MAKE) -C $(LIBFT_PATH) fclean
 	rm -f $(NAME)
-	cd $(LIBFTDIR) && make fclea
 
 re: fclean all

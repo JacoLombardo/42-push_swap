@@ -6,13 +6,18 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:17:58 by jalombar          #+#    #+#             */
-/*   Updated: 2024/05/07 15:12:03 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/05 14:42:46 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include <stdlib.h>
-#include <unistd.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+
+# include <limits.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -65,3 +70,12 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+int					ft_printf(const char *format, ...);
+int					ft_print_c(char c);
+int					ft_print_s(char *s);
+int					ft_print_ptr(unsigned long p);
+int					ft_print_nbr(long nb);
+int					ft_putnbr_base(unsigned long nb, char *base);
+
+#endif
