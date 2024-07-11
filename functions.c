@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   functions.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 12:39:11 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/11 15:06:57 by jalombar         ###   ########.fr       */
+/*   Created: 2024/07/11 12:44:33 by jalombar          #+#    #+#             */
+/*   Updated: 2024/07/11 15:11:51 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	sa(t_stack **a)
 {
-	t_list	*temp;
+	t_stack	*temp;
 
-	temp = *lst;
-	if (*lst)
+	temp = (*a)->next;
+	if (ft_lstsize(*a) > 1)
 	{
-		while (*lst)
-		{
-			temp = (*lst)->next;
-			ft_lstdelone(*lst, del);
-			*lst = temp;
-		}
+		(*a)->next = (*a)->next->next;
+		temp->next = *a;
+		*a = temp;
 	}
-	lst = NULL;
+}
+
+void	sb(t_stack **b)
+{
+	t_stack	*temp;
+
+	temp = (*b)->next;
+	if (ft_lstsize(*b) > 1)
+	{
+		(*b)->next = (*b)->next->next;
+		temp->next = *b;
+		*b = temp;
+	}
 }
