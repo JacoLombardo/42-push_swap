@@ -6,15 +6,15 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:28:48 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/11 15:07:34 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/12 11:06:36 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	t_list	*temp;
+	t_stack	*temp;
 
 	temp = *lst;
 	if (*lst)

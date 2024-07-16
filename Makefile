@@ -6,13 +6,13 @@
 #    By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/08 12:40:11 by jalombar          #+#    #+#              #
-#    Updated: 2024/07/11 14:12:22 by jalombar         ###   ########.fr        #
+#    Updated: 2024/07/12 12:13:12 by jalombar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc   
 CFLAGS = -Wall -Werror -Wextra
-SRCS = push_swap.c push_swap_utils.c functions.c
+SRCS = push_swap.c push_swap_utils.c functions/s_p.c functions/r.c functions/rr.c
 OBJS = $(SRCS:.c=.o)
 HEADER = push_swap.h
 NAME = push_swap

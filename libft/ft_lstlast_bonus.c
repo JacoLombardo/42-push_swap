@@ -6,13 +6,13 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:19:20 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/11 15:06:44 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/12 11:36:29 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_stack	*ft_lstlast(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);

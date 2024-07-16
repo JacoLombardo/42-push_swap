@@ -6,13 +6,13 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:39:11 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/11 15:06:57 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/12 11:40:41 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+/* void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
 
@@ -27,4 +27,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		}
 	}
 	lst = NULL;
-}
+} */

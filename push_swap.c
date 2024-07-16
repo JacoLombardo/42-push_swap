@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 14:52:13 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/11 15:08:50 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/16 14:01:55 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 char	*push_swap(t_stack *a)
 {
-	printf("1: %i\n", a->nbr);
-	printf("1: %i\n", a->next->nbr);
-	sa(&a);
-	printf("2: %i\n", a->nbr);
-	printf("2: %i\n", a->next->nbr);
+	t_stack	*b;
+
+	b = NULL;
+	ft_printf("%i\n", a->nbr);
 	return (NULL);
 }
 

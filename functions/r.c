@@ -1,39 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   functions.c                                        :+:      :+:    :+:   */
+/*   r.c                                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/11 12:44:33 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/11 15:11:51 by jalombar         ###   ########.fr       */
+/*   Created: 2024/07/12 11:31:13 by jalombar          #+#    #+#             */
+/*   Updated: 2024/07/12 12:10:44 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	sa(t_stack **a)
+void	ra(t_stack **a)
 {
 	t_stack	*temp;
 
-	temp = (*a)->next;
-	if (ft_lstsize(*a) > 1)
+	temp = NULL;
+	if (ft_lstsize(*a) > 2)
 	{
-		(*a)->next = (*a)->next->next;
-		temp->next = *a;
-		*a = temp;
+		temp = *a;
+		*a = (*a)->next;
+		temp->next = NULL;
+		ft_lstadd_back(a, temp);
 	}
 }
 
-void	sb(t_stack **b)
+void	rb(t_stack **b)
 {
 	t_stack	*temp;
 
-	temp = (*b)->next;
-	if (ft_lstsize(*b) > 1)
+	temp = NULL;
+	if (ft_lstsize(*b) > 2)
 	{
-		(*b)->next = (*b)->next->next;
-		temp->next = *b;
-		*b = temp;
+		temp = *b;
+		*b = (*b)->next;
+		temp->next = NULL;
+		ft_lstadd_back(b, temp);
 	}
 }
+
+void	rr(t_stack **a, t_stack **b)
+{
+	ra(a);
+	rb(b);
+}
+
