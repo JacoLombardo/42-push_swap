@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void	sa(t_stack **a)
+void	sa(t_stack **a, int single)
 {
 	t_stack	*temp;
 
@@ -20,12 +20,16 @@ void	sa(t_stack **a)
 	if (ft_lstsize(*a) > 1)
 	{
 		(*a)->next = (*a)->next->next;
+		(*a)->index = 2;
+		temp->index = 1;
 		temp->next = *a;
 		*a = temp;
 	}
+	if (single)
+		ft_printf("sa\n");
 }
 
-void	sb(t_stack **b)
+void	sb(t_stack **b, int single)
 {
 	t_stack	*temp;
 
@@ -33,15 +37,20 @@ void	sb(t_stack **b)
 	if (ft_lstsize(*b) > 1)
 	{
 		(*b)->next = (*b)->next->next;
+		(*b)->index = 2;
+		temp->index = 1;
 		temp->next = *b;
 		*b = temp;
 	}
+	if (single)
+		ft_printf("sb\n");
 }
 
 void	ss(t_stack **a, t_stack **b)
 {
-	sa(a);
-	sb(b);
+	sa(a, 0);
+	sb(b, 0);
+	ft_printf("ss\n");
 }
 
 void	pb(t_stack **b, t_stack **a)
@@ -55,6 +64,7 @@ void	pb(t_stack **b, t_stack **a)
 		temp->next = NULL;
 		ft_lstadd_back(a, temp);
 	}
+	ft_printf("pb\n");
 }
 
 void	pa(t_stack **a, t_stack **b)
@@ -68,5 +78,6 @@ void	pa(t_stack **a, t_stack **b)
 		temp->next = NULL;
 		ft_lstadd_back(b, temp);
 	}
+	ft_printf("pa\n");
 }
 

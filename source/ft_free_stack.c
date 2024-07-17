@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_free_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 12:08:05 by jalombar          #+#    #+#             */
-/*   Updated: 2024/05/07 14:49:44 by jalombar         ###   ########.fr       */
+/*   Created: 2024/07/17 14:46:14 by jalombar          #+#    #+#             */
+/*   Updated: 2024/07/17 14:46:14 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-char	*ft_strdup(const char *s)
+t_stack	*ft_free_stack(t_stack *stack)
 {
-	char	*dup;
-	int		i;
+	t_stack	*temp;
 
-	i = 0;
-	dup = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
-	if (!dup)
-		return (NULL);
-	while (s[i])
+	temp = stack;
+	if (stack)
 	{
-		dup[i] = s[i];
-		i++;
+		while (stack)
+		{
+			temp = stack->next;
+			free(stack);
+			stack = temp;
+		}
+		stack = NULL;
 	}
-	dup[i] = '\0';
-	return (dup);
+	return (NULL);
 }

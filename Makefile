@@ -12,8 +12,7 @@
 
 CC = cc   
 CFLAGS = -Wall -Werror -Wextra
-SRCS = push_swap.c push_swap_utils.c functions/s_p.c functions/r.c functions/rr.c
-OBJS = $(SRCS:.c=.o)
+SRCS = push_swap.c functions/s_p.c functions/r.c functions/rr.c source/ft_free_stack.c source/ft_handle_stack.c source/ft_lst.c
 HEADER = push_swap.h
 NAME = push_swap
 LIBFT_PATH = libft
@@ -21,18 +20,14 @@ LIBFT = $(LIBFT_PATH)/libft.a
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) -o $@ $(OBJS) -L$(LIBFT_PATH) -lft
-
-%.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME): $(SRCS) $(LIBFT)
+	$(CC) $(CFLAGS) -o $@ $(SRCS) -L$(LIBFT_PATH) -lft
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_PATH)
 
 clean:
 	$(MAKE) -C $(LIBFT_PATH) clean
-	rm -f $(OBJS)
 
 fclean: clean
 	$(MAKE) -C $(LIBFT_PATH) fclean

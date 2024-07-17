@@ -1,28 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lst.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 12:28:48 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/12 11:06:36 by jalombar         ###   ########.fr       */
+/*   Created: 2024/07/17 14:47:11 by jalombar          #+#    #+#             */
+/*   Updated: 2024/07/17 14:47:11 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-void	ft_lstadd_back(t_stack **lst, t_stack *new)
+int	ft_lst_check(t_stack *stack, int nbr)
+{
+	if (stack)
+	{
+		while (stack)
+		{
+			if (stack->nbr == nbr)
+				return (1);
+			stack = stack->next;
+		}
+	}
+	return (0);
+}
+
+t_stack	*ft_lst_add(t_stack **stack, int nbr)
 {
 	t_stack	*temp;
+	t_stack	*new;
 
-	temp = *lst;
-	if (*lst)
+	new = malloc(sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	new->index = 1;
+	new->nbr = nbr;
+	new->next = NULL;
+	temp = *stack;
+	if (*stack)
 	{
 		while (temp->next)
 			temp = temp->next;
+		new->index = temp->index + 1;
 		temp->next = new;
 	}
 	else
-		*lst = new;
+		*stack = new;
+	return (new);
 }
