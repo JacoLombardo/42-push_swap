@@ -23,9 +23,10 @@ void	ra(t_stack **a, int single)
 		*a = (*a)->next;
 		temp->next = NULL;
 		ft_lstadd_back(a, temp);
+		ft_set_index(a);
+		if (single)
+			ft_printf("ra\n");
 	}
-	if (single)
-		ft_printf("ra\n");
 }
 
 void	rb(t_stack **b, int single)
@@ -39,9 +40,10 @@ void	rb(t_stack **b, int single)
 		*b = (*b)->next;
 		temp->next = NULL;
 		ft_lstadd_back(b, temp);
+		ft_set_index(b);
+		if (single)
+			ft_printf("rb\n");
 	}
-	if (single)
-		ft_printf("rb\n");
 }
 
 void	rr(t_stack **a, t_stack **b)

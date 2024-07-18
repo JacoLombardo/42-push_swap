@@ -24,9 +24,9 @@ void	sa(t_stack **a, int single)
 		temp->index = 1;
 		temp->next = *a;
 		*a = temp;
+		if (single)
+			ft_printf("sa\n");
 	}
-	if (single)
-		ft_printf("sa\n");
 }
 
 void	sb(t_stack **b, int single)
@@ -41,9 +41,9 @@ void	sb(t_stack **b, int single)
 		temp->index = 1;
 		temp->next = *b;
 		*b = temp;
+		if (single)
+			ft_printf("sb\n");
 	}
-	if (single)
-		ft_printf("sb\n");
 }
 
 void	ss(t_stack **a, t_stack **b)
@@ -53,7 +53,7 @@ void	ss(t_stack **a, t_stack **b)
 	ft_printf("ss\n");
 }
 
-void	pb(t_stack **b, t_stack **a)
+void	pa(t_stack **b, t_stack **a)
 {
 	t_stack	*temp;
 
@@ -61,13 +61,14 @@ void	pb(t_stack **b, t_stack **a)
 	if (ft_lstsize(*b) > 0)
 	{
 		*b = (*b)->next;
-		temp->next = NULL;
-		ft_lstadd_back(a, temp);
+		ft_set_index(b);
+		ft_lstadd_front(a, temp);
+		ft_set_index(a);
+		ft_printf("pa\n");
 	}
-	ft_printf("pb\n");
 }
 
-void	pa(t_stack **a, t_stack **b)
+void	pb(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;
 
@@ -75,9 +76,10 @@ void	pa(t_stack **a, t_stack **b)
 	if (ft_lstsize(*a) > 0)
 	{
 		*a = (*a)->next;
-		temp->next = NULL;
-		ft_lstadd_back(b, temp);
+		ft_set_index(a);
+		ft_lstadd_front(b, temp);
+		ft_set_index(b);
+		ft_printf("pb\n");
 	}
-	ft_printf("pa\n");
 }
 

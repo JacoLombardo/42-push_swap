@@ -31,6 +31,7 @@ int		ft_lst_check(t_stack *stack, int nbr);
 int		ft_atoi_2(char **str, t_stack **a);
 t_stack *ft_create_stack(char *str, t_stack **a, int *stack_len);
 int ft_handle_stack(char **argv, int argc, t_stack **a);
+void	ft_set_index(t_stack **stack);
 
 /* FUNCTIONS */
 

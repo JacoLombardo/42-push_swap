@@ -25,9 +25,10 @@ void	rra(t_stack **a, int single)
 		temp2 = ft_lstbeforelast(*a);
 		temp2->next = NULL;
 		ft_lstadd_front(a, temp);
+		ft_set_index(a);
+		if (single)
+			ft_printf("rra\n");
 	}
-	if (single)
-		ft_printf("rra\n");
 }
 
 void	rrb(t_stack **b, int single)
@@ -43,9 +44,10 @@ void	rrb(t_stack **b, int single)
 		temp2 = ft_lstbeforelast(*b);
 		temp2->next = NULL;
 		ft_lstadd_front(b, temp);
+		ft_set_index(b);
+		if (single)
+			ft_printf("rrb\n");
 	}
-	if (single)
-		ft_printf("rrb\n");
 }
 
 void	rrr(t_stack **a, t_stack **b)

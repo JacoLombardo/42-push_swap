@@ -26,6 +26,19 @@ int	ft_lst_check(t_stack *stack, int nbr)
 	return (0);
 }
 
+void	ft_set_index(t_stack **stack)
+{
+	int	i;
+
+	i = 1;
+	while (*stack)
+	{
+		(*stack)->index = i;
+		i++;
+		*stack = (*stack)->next;
+	}
+}
+
 t_stack	*ft_lst_add(t_stack **stack, int nbr)
 {
 	t_stack	*temp;

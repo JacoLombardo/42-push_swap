@@ -14,15 +14,30 @@
 
 char	*push_swap(t_stack *a)
 {
-	// t_stack	*b;
+	t_stack	*b;
 
-	// b = NULL;
-	sa(&a, 1);
+	b = NULL;
+	pb(&a, &b);
+	pb(&a, &b);
+	pb(&a, &b);
+	pb(&a, &b);
+	ft_printf("%i    ", a->nbr);
 	while (a)
 	{
-		ft_printf("A-%i: ", a->index);
-		ft_printf("%i\n", a->nbr);
-		a = a->next;
+		if (a)
+		{
+			ft_printf("A-%i: ", a->index);
+			ft_printf("%i    ", a->nbr);
+			a = a->next;
+		}
+
+		if (b)
+		{
+			ft_printf("B-%i: ", b->index);
+			ft_printf("%i", b->nbr);
+			b = b->next;
+		}
+		ft_printf("\n");
 	}
 	return (NULL);
 }
