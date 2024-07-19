@@ -2,15 +2,37 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_lst.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+
+	+:+     */
+/*   By: jalombar <jalombar@student.42.fr>          +#+  +:+
+	+#+        */
+/*                                                +#+#+#+#+#+
+	+#+           */
 /*   Created: 2024/07/17 14:47:11 by jalombar          #+#    #+#             */
 /*   Updated: 2024/07/17 14:47:11 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int	ft_check_order(t_stack *stack)
+{
+	int	temp;
+
+	temp = stack->nbr;
+	if (ft_lstsize(stack) > 1)
+	{
+		stack = stack->next;
+		while (stack)
+		{
+			if (temp > stack->nbr)
+				return (0);
+			temp = stack->nbr;
+			stack = stack->next;
+		}
+	}
+	return (1);
+}
 
 int	ft_lst_check(t_stack *stack, int nbr)
 {
@@ -28,21 +50,23 @@ int	ft_lst_check(t_stack *stack, int nbr)
 
 void	ft_set_index(t_stack **stack)
 {
-	int	i;
+	int i;
+	t_stack *temp;
 
 	i = 1;
-	while (*stack)
+	temp = *stack;
+	while (temp)
 	{
-		(*stack)->index = i;
+		temp->index = i;
 		i++;
-		*stack = (*stack)->next;
+		temp = temp->next;
 	}
 }
 
 t_stack	*ft_lst_add(t_stack **stack, int nbr)
 {
-	t_stack	*temp;
-	t_stack	*new;
+	t_stack *temp;
+	t_stack *new;
 
 	new = malloc(sizeof(t_stack));
 	if (!new)

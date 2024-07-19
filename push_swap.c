@@ -12,17 +12,9 @@
 
 #include "push_swap.h"
 
-char	*push_swap(t_stack *a)
+void	ft_printout(t_stack *a, t_stack *b)
 {
-	t_stack	*b;
-
-	b = NULL;
-	pb(&a, &b);
-	pb(&a, &b);
-	pb(&a, &b);
-	pb(&a, &b);
-	ft_printf("%i    ", a->nbr);
-	while (a)
+	while (a || b)
 	{
 		if (a)
 		{
@@ -39,6 +31,32 @@ char	*push_swap(t_stack *a)
 		}
 		ft_printf("\n");
 	}
+}
+
+char	*push_swap(t_stack *a)
+{
+	t_stack	*b;
+
+	b = NULL;
+	if (ft_check_order(a))
+		return (NULL);
+	ft_printout(a, b);
+	if (ft_lstsize(a) == 2)
+		sa(&a, 1);
+	else if (ft_lstsize(a) == 3)
+		ft_sort_three(&a);
+	ft_printout(a, b);
+	/* pb(&a, &b);
+	pb(&a, &b);
+	pb(&a, &b);
+	pb(&a, &b);
+	ft_printout(a, b);
+	rrb(&b, 1);
+	ft_printout(a, b);
+	rra(&a, 1);
+	ft_printout(a, b);
+	rrr(&a, &b);
+	ft_printout(a, b); */
 	return (NULL);
 }
 

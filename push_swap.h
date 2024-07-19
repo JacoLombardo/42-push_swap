@@ -24,14 +24,52 @@
 	struct s_stack	*next;
 }					t_stack; */
 
+typedef struct s_minmax
+{
+	struct s_min		*min;
+	struct s_max		*max;
+}					t_minmax;
+
+typedef struct s_min
+{
+	int		value;
+	int		index;
+}					t_min;
+
+typedef struct s_max
+{
+	int		value;
+	int		index;
+}					t_max;
+
+typedef struct s_cost
+{
+	int			*value;
+	int			*index;
+}					t_cost;
+
+typedef struct s_moves
+{
+	int					pb;
+	int					ra;
+	int					rb;
+	int					rr;
+	int					rra;
+	int					rrb;
+	int					rrr;
+}					t_moves;
+
 t_stack	*ft_free_stack(t_stack *stack);
 t_stack	*ft_lst_add(t_stack **stack, int nbr);
-//int		ft_nbrlen(int nbr);
 int		ft_lst_check(t_stack *stack, int nbr);
 int		ft_atoi_2(char **str, t_stack **a);
-t_stack *ft_create_stack(char *str, t_stack **a, int *stack_len);
-int ft_handle_stack(char **argv, int argc, t_stack **a);
+t_stack	*ft_create_stack(char *str, t_stack **a, int *stack_len);
+int		ft_handle_stack(char **argv, int argc, t_stack **a);
 void	ft_set_index(t_stack **stack);
+void	ft_sort_three(t_stack **stack);
+int		ft_check_order(t_stack *stack);
+void	ft_printout(t_stack *a, t_stack *b);
+t_minmax	*ft_get_mm(t_stack *stack);
 
 /* FUNCTIONS */
 
