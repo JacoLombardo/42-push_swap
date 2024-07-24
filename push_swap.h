@@ -44,8 +44,9 @@ typedef struct s_max
 
 typedef struct s_cost
 {
-	int			*value;
-	int			*index;
+	struct s_moves	*moves;
+	int				value;
+	int				index;
 }					t_cost;
 
 typedef struct s_moves
@@ -70,6 +71,11 @@ void	ft_sort_three(t_stack **stack);
 int		ft_check_order(t_stack *stack);
 void	ft_printout(t_stack *a, t_stack *b);
 t_minmax	*ft_get_mm(t_stack *stack);
+void	ft_check(t_stack **a, t_stack **b);
+t_moves	*ft_calc_cost(t_stack *a, t_stack *b, t_stack *temp, t_minmax *minmax);
+int	ft_calc_moves(t_moves *moves);
+t_minmax	*ft_get_mm(t_stack *stack);
+void	ft_sorttt(t_stack **a, t_stack **b);
 
 /* FUNCTIONS */
 

@@ -40,12 +40,18 @@ char	*push_swap(t_stack *a)
 	b = NULL;
 	if (ft_check_order(a))
 		return (NULL);
-	ft_printout(a, b);
+	//ft_printout(a, b);
 	if (ft_lstsize(a) == 2)
 		sa(&a, 1);
 	else if (ft_lstsize(a) == 3)
 		ft_sort_three(&a);
+	pb(&a, &b);
+	pb(&a, &b);
+	pb(&a, &b);
 	ft_printout(a, b);
+	ft_sorttt(&a, &b);
+	ft_printout(a, b);
+	//ft_printout(a, b);
 	/* pb(&a, &b);
 	pb(&a, &b);
 	pb(&a, &b);
