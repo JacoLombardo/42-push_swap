@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 14:57:00 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/24 15:44:06 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/24 18:50:34 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -273,24 +273,24 @@ t_moves	*ft_calc_cost(t_stack *a, t_stack *b, t_stack *temp, t_minmax *minmax)
 }
 void	ft_sorttt(t_stack **a, t_stack **b)
 {
-	int i;
+	t_max	*max;
+	int	moves;
 
-	i = 0;
-	/* ft_check(a, b, 0);
-	ft_printout(*a, *b);
-	ft_printf("BEGINNING OF SECOND\n\n");
-	ft_check(a, b, 0); */
-	/* ft_check(a, b);
-	ft_printout(*a, *b);
-	ft_check(a, b);
-	ft_printout(*a, *b); */
 	while (ft_lstsize(*a) > 0)
-	{
-		//ft_printf("AAAA -> %i <-\n", i);
 		ft_check(a, b);
-		//ft_printout(*a, *b);
-		//i++;
+	max = ft_max2(*b);
+	if (max->index > ((ft_lstsize(*b) / 2) + 1))
+	{
+		moves = ft_lstsize(*b) - max->index + 1;
+		while (moves--)
+			rrb(b, 1);
 	}
-	/* while (ft_lstsize(*b) > 0)
-		pa(b, a); */
+	else
+	{
+		moves = max->index - 1;
+		while (moves--)
+			rb(b, 1);
+	}
+	while (ft_lstsize(*b) > 0)
+	 	pa(b, a);
 }

@@ -76,6 +76,7 @@ t_moves	*ft_calc_cost(t_stack *a, t_stack *b, t_stack *temp, t_minmax *minmax);
 int	ft_calc_moves(t_moves *moves);
 t_minmax	*ft_get_mm(t_stack *stack);
 void	ft_sorttt(t_stack **a, t_stack **b);
+t_max	*ft_max2(t_stack *stack);
 
 /* FUNCTIONS */
 
