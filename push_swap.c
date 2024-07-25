@@ -29,6 +29,7 @@ void	push_swap(t_stack *a)
 		pb(&a, &b);
 		ft_sort_big(&a, &b);
 	}
+	ft_free_stack(a);
 }
 
 int	main(int argc, char **argv)

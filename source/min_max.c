@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:30:38 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/25 10:03:17 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:27:47 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,35 +59,3 @@ t_minmax	*ft_get_mm(t_stack *stack)
 	minmax->max = ft_max(stack);
 	return (minmax);
 }
-
-/* int	ft_min(t_stack *stack)
-{
-	int	i;
-	int	min;
-
-	i = 0;
-	min = stack->nbr;
-	while (i++ < ft_lstsize(stack))
-	{
-		if (stack->nbr < min)
-			min = stack->nbr;
-		stack = stack->next;
-	}
-	return (min);
-}
-
-int	ft_max(t_stack *stack)
-{
-	int	i;
-	int	max;
-
-	i = 0;
-	max = stack->nbr;
-	while (i++ < ft_lstsize(stack))
-	{
-		if (stack->nbr > max)
-			max = stack->nbr;
-		stack = stack->next;
-	}
-	return (max);
-} */

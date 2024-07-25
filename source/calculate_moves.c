@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 10:07:07 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/25 13:58:34 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:29:58 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ int	ft_count_moves(t_moves *moves)
 
 t_moves	*ft_double_moves(t_moves *moves)
 {
-	moves->rr = 0;
-	moves->rrr = 0;
 	if (moves->ra && moves->rb)
 	{
 		while (moves->ra && moves->rb)

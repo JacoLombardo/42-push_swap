@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 14:57:00 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/25 13:58:06 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:17:17 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,5 @@ void	ft_sort_big(t_stack **a, t_stack **b)
 		while (moves--)
 			ra(a, 1);
 	}
+	free(min);
 }

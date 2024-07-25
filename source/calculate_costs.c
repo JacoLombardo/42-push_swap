@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 10:04:17 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/25 13:58:45 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:25:21 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_free_costs(t_cost **costs, int size, t_minmax *minmax)
 	int	i;
 
 	i = 0;
-	while (i < size)
+	while (i <= size)
 	{
 		free(costs[i]->moves);
 		free(costs[i]);
