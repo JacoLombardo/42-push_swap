@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 void	sa(t_stack **a, int single)
 {
@@ -82,4 +82,3 @@ void	pb(t_stack **a, t_stack **b)
 		ft_printf("pb\n");
 	}
 }
-

@@ -12,27 +12,6 @@
 
 #include "push_swap.h"
 
-void	ft_printout(t_stack *a, t_stack *b)
-{
-	while (a || b)
-	{
-		if (a)
-		{
-			ft_printf("A-%i: ", a->index);
-			ft_printf("%i    ", a->nbr);
-			a = a->next;
-		}
-
-		if (b)
-		{
-			ft_printf("B-%i: ", b->index);
-			ft_printf("%i", b->nbr);
-			b = b->next;
-		}
-		ft_printf("\n");
-	}
-}
-
 void	push_swap(t_stack *a)
 {
 	t_stack	*b;
@@ -47,9 +26,9 @@ void	push_swap(t_stack *a)
 	else
 	{
 		pb(&a, &b);
-		ft_sorttt(&a, &b);
+		pb(&a, &b);
+		ft_sort_big(&a, &b);
 	}
-	ft_printout(a, b);
 }
 
 int	main(int argc, char **argv)
@@ -60,11 +39,9 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		if (!ft_handle_stack(argv, argc, &a))
-		{
 			write(1, "Error\n", 6);
-			return (0);
-		}
-		push_swap(a);
+		else
+			push_swap(a);
 	}
 	return (0);
 }

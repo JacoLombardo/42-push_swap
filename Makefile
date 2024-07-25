@@ -12,7 +12,7 @@
 
 CC = cc   
 CFLAGS = -Wall -Werror -Wextra
-SRCS = push_swap.c functions/s_p.c functions/r.c functions/rr.c source/ft_free_stack.c source/ft_handle_stack.c source/ft_lst.c source/ft_sort_three.c source/ft_sort.c source/ft_min_max.c
+SRCS = push_swap.c source/functions/s_p.c source/functions/r.c source/functions/rr.c source/b_to_a.c source/calculate_costs.c source/calculate_moves.c source/create_stack.c source/ft_sort_three.c source/lst.c source/min_max.c source/sort_big.c
 HEADER = push_swap.h
 NAME = push_swap
 LIBFT_PATH = libft

@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 void	ra(t_stack **a, int single)
 {
 	t_stack	*temp;
 
 	temp = NULL;
-	if (ft_lstsize(*a) > 2)
+	if (ft_lstsize(*a) > 1)
 	{
 		temp = *a;
 		*a = (*a)->next;
@@ -34,7 +34,7 @@ void	rb(t_stack **b, int single)
 	t_stack	*temp;
 
 	temp = NULL;
-	if (ft_lstsize(*b) > 2)
+	if (ft_lstsize(*b) > 1)
 	{
 		temp = *b;
 		*b = (*b)->next;
@@ -52,4 +52,3 @@ void	rr(t_stack **a, t_stack **b)
 	rb(b, 0);
 	ft_printf("rr\n");
 }
-

@@ -14,15 +14,8 @@
 # define PUSH_SWAP_H
 
 # include "./libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-
-/* typedef struct s_stack
-{
-	int				index;
-	int				nbr;
-	struct s_stack	*next;
-}					t_stack; */
+/* # include <stdlib.h>
+# include <unistd.h> */
 
 typedef struct s_minmax
 {
@@ -51,6 +44,7 @@ typedef struct s_cost
 
 typedef struct s_moves
 {
+	int					pa;
 	int					pb;
 	int					ra;
 	int					rb;
@@ -60,36 +54,61 @@ typedef struct s_moves
 	int					rrr;
 }					t_moves;
 
-t_stack	*ft_free_stack(t_stack *stack);
-t_stack	*ft_lst_add(t_stack **stack, int nbr);
-int		ft_lst_check(t_stack *stack, int nbr);
-int		ft_atoi_2(char **str, t_stack **a);
-t_stack	*ft_create_stack(char *str, t_stack **a, int *stack_len);
-int		ft_handle_stack(char **argv, int argc, t_stack **a);
-void	ft_set_index(t_stack **stack);
-void	ft_sort_three(t_stack **stack);
-int		ft_check_order(t_stack *stack);
-void	ft_printout(t_stack *a, t_stack *b);
-t_minmax	*ft_get_mm(t_stack *stack);
-void	ft_check(t_stack **a, t_stack **b);
-t_moves	*ft_calc_cost(t_stack *a, t_stack *b, t_stack *temp, t_minmax *minmax);
-int	ft_calc_moves(t_moves *moves);
-t_minmax	*ft_get_mm(t_stack *stack);
-void	ft_sorttt(t_stack **a, t_stack **b);
-t_max	*ft_max2(t_stack *stack);
-
 /* FUNCTIONS */
+void		sa(t_stack **a, int single);
+void		sb(t_stack **b, int single);
+void		ss(t_stack **a, t_stack **b);
+void		pb(t_stack **b, t_stack **a);
+void		pa(t_stack **a, t_stack **b);
+void		ra(t_stack **a, int single);
+void		rb(t_stack **b, int single);
+void		rr(t_stack **a, t_stack **b);
+void		rra(t_stack **a, int single);
+void		rrb(t_stack **b, int single);
+void		rrr(t_stack **a, t_stack **b);
 
-void	sa(t_stack **a, int single);
-void	sb(t_stack **b, int single);
-void	ss(t_stack **a, t_stack **b);
-void	pb(t_stack **b, t_stack **a);
-void	pa(t_stack **a, t_stack **b);
-void	ra(t_stack **a, int single);
-void	rb(t_stack **b, int single);
-void	rr(t_stack **a, t_stack **b);
-void	rra(t_stack **a, int single);
-void	rrb(t_stack **b, int single);
-void	rrr(t_stack **a, t_stack **b);
+/* b_to_a */
+
+int			ft_find_index_toa(t_stack *stack, t_stack *temp);
+void		ft_check_costs_toa(t_stack **b, t_stack **a);
+t_moves		*ft_calc_b_toa(t_stack *b, t_stack *temp, t_moves *moves);
+t_moves		*ft_calc_a_toa(t_stack *a, t_stack *b, t_stack *temp, 
+				t_minmax *minmax);
+
+/* create_stack */
+int			ft_atoi_2(char **str, t_stack **a);
+t_stack		*ft_create_stack(char *str, t_stack **a, int *stack_len);
+int			ft_handle_stack(char **argv, int argc, t_stack **a);
+
+/* lst */
+int			ft_check_order(t_stack *stack);
+int			ft_check_double(t_stack *stack, int nbr);
+void		ft_set_index(t_stack **stack);
+t_stack		*ft_free_stack(t_stack *stack);
+t_stack		*ft_lst_add(t_stack **stack, int nbr);
+
+/* min_max */
+t_min		*ft_min(t_stack *stack);
+t_max		*ft_max(t_stack *stack);
+t_minmax	*ft_get_mm(t_stack *stack);
+
+/* calculate_costs */
+void		ft_free_costs(t_cost **costs, int size, t_minmax *minmax);
+t_cost		**ft_sort_costs(t_cost **costs, int size);
+void		ft_check_costs(t_stack **a, t_stack **b);
+
+/* calculate_moves */
+void		ft_moves_null(t_moves **moves);
+int			ft_count_moves(t_moves *moves);
+t_moves		*ft_double_moves(t_moves *moves);
+t_moves		*ft_calc_a(t_stack *a, t_stack *temp, t_moves *moves);
+t_moves		*ft_calc_b(t_stack *a, t_stack *b, t_stack *temp, t_minmax *minmax);
+
+/* sort_big */
+void		ft_exec_moves(t_moves *moves, t_stack **a, t_stack **b);
+int			ft_find_index(t_stack *stack, t_stack *temp);
+void		ft_sort_big(t_stack **a, t_stack **b);
+
+void		ft_sort_three(t_stack **stack);
 
 #endif

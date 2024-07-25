@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min_max.c                                       :+:      :+:    :+:   */
+/*   min_max.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:30:38 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/24 12:26:55 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/25 10:03:17 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_min	*ft_min2(t_stack *stack)
+t_min	*ft_min(t_stack *stack)
 {
 	t_min	*min;
 
@@ -31,7 +31,7 @@ t_min	*ft_min2(t_stack *stack)
 	return (min);
 }
 
-t_max	*ft_max2(t_stack *stack)
+t_max	*ft_max(t_stack *stack)
 {
 	t_max	*max;
 
@@ -50,7 +50,17 @@ t_max	*ft_max2(t_stack *stack)
 	return (max);
 }
 
-int	ft_min(t_stack *stack)
+t_minmax	*ft_get_mm(t_stack *stack)
+{
+	t_minmax	*minmax;
+
+	minmax = malloc(1 * sizeof(t_minmax));
+	minmax->min = ft_min(stack);
+	minmax->max = ft_max(stack);
+	return (minmax);
+}
+
+/* int	ft_min(t_stack *stack)
 {
 	int	i;
 	int	min;
@@ -80,16 +90,4 @@ int	ft_max(t_stack *stack)
 		stack = stack->next;
 	}
 	return (max);
-}
-
-t_minmax	*ft_get_mm(t_stack *stack)
-{
-	t_minmax	*minmax;
-
-	minmax = malloc(1 * sizeof(t_minmax));
-	minmax->min = ft_min2(stack);
-	minmax->max = ft_max2(stack);
-	/* ft_printf("MIN: %i, i: %i\n", minmax->min->value, minmax->min->index);
-	ft_printf("MAX: %i, i: %i\n", minmax->max->value, minmax->max->index); */
-	return (minmax);
-}
+} */

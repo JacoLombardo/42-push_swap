@@ -34,7 +34,7 @@ int	ft_check_order(t_stack *stack)
 	return (1);
 }
 
-int	ft_lst_check(t_stack *stack, int nbr)
+int	ft_check_double(t_stack *stack, int nbr)
 {
 	if (stack)
 	{
@@ -50,8 +50,8 @@ int	ft_lst_check(t_stack *stack, int nbr)
 
 void	ft_set_index(t_stack **stack)
 {
-	int i;
-	t_stack *temp;
+	int		i;
+	t_stack	*temp;
 
 	i = 1;
 	temp = *stack;
@@ -63,10 +63,28 @@ void	ft_set_index(t_stack **stack)
 	}
 }
 
+t_stack	*ft_free_stack(t_stack *stack)
+{
+	t_stack	*temp;
+
+	temp = stack;
+	if (stack)
+	{
+		while (stack)
+		{
+			temp = stack->next;
+			free(stack);
+			stack = temp;
+		}
+		stack = NULL;
+	}
+	return (NULL);
+}
+
 t_stack	*ft_lst_add(t_stack **stack, int nbr)
 {
-	t_stack *temp;
-	t_stack *new;
+	t_stack	*temp;
+	t_stack	*new;
 
 	new = malloc(sizeof(t_stack));
 	if (!new)
