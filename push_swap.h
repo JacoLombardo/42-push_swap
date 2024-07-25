@@ -14,8 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "./libft/libft.h"
-/* # include <stdlib.h>
-# include <unistd.h> */
 
 typedef struct s_minmax
 {
