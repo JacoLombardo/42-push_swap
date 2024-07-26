@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 14:40:15 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/26 12:29:51 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/26 12:47:52 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,6 @@
 
 # include "get_next_line/get_next_line.h"
 # include "../libft/libft.h"
-
-/* typedef struct s_stack
-{
-	int				index;
-	int				nbr;
-	struct s_stack	*prev;
-	struct s_stack	*next;
-}					t_stack; */
 
 t_stack				*ft_create_stack_checker(char *str, t_stack **a,
 						int *stack_len);
