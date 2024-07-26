@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 14:40:01 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/26 12:35:12 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/26 12:44:49 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,15 @@ void	checker(t_stack *a)
 	while (line)
 	{
 		ft_move_stack(line, &a, &b);
+		free(line);
 		line = get_next_line(STDIN_FILENO);
 	}
+	free(line);
 	if (ft_check_order(a))
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
+	ft_free_stack(a);
 }
 
 int	main(int argc, char **argv)
