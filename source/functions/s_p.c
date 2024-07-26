@@ -12,7 +12,7 @@
 
 #include "../../push_swap.h"
 
-void	sa(t_stack **a, int single)
+void	sa(t_stack **a, int print)
 {
 	t_stack	*temp;
 
@@ -24,12 +24,12 @@ void	sa(t_stack **a, int single)
 		temp->index = 1;
 		temp->next = *a;
 		*a = temp;
-		if (single)
+		if (print)
 			ft_printf("sa\n");
 	}
 }
 
-void	sb(t_stack **b, int single)
+void	sb(t_stack **b, int print)
 {
 	t_stack	*temp;
 
@@ -41,19 +41,20 @@ void	sb(t_stack **b, int single)
 		temp->index = 1;
 		temp->next = *b;
 		*b = temp;
-		if (single)
+		if (print)
 			ft_printf("sb\n");
 	}
 }
 
-void	ss(t_stack **a, t_stack **b)
+void	ss(t_stack **a, t_stack **b, int print)
 {
 	sa(a, 0);
 	sb(b, 0);
-	ft_printf("ss\n");
+	if (print)
+		ft_printf("ss\n");
 }
 
-void	pa(t_stack **b, t_stack **a)
+void	pa(t_stack **b, t_stack **a, int print)
 {
 	t_stack	*temp;
 
@@ -64,11 +65,12 @@ void	pa(t_stack **b, t_stack **a)
 		ft_set_index(b);
 		ft_lstadd_front(a, temp);
 		ft_set_index(a);
-		ft_printf("pa\n");
+		if (print)
+			ft_printf("pa\n");
 	}
 }
 
-void	pb(t_stack **a, t_stack **b)
+void	pb(t_stack **a, t_stack **b, int print)
 {
 	t_stack	*temp;
 
@@ -79,6 +81,7 @@ void	pb(t_stack **a, t_stack **b)
 		ft_set_index(a);
 		ft_lstadd_front(b, temp);
 		ft_set_index(b);
-		ft_printf("pb\n");
+		if (print)
+			ft_printf("pb\n");
 	}
 }

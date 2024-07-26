@@ -36,7 +36,7 @@ int	ft_atoi_2(char **str, t_stack **a)
 	if ((*(*str) != ' ' && *(*str) != '\0') || result < INT_MIN
 		|| result > INT_MAX || ft_check_double(*a, (int)result))
 		return (0);
-	ft_lst_add(a, (int)result);
+	ft_lst_add_ps(a, (int)result);
 	return (1);
 }
 

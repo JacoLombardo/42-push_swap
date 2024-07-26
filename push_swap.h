@@ -53,17 +53,17 @@ typedef struct s_moves
 }					t_moves;
 
 /* FUNCTIONS */
-void		sa(t_stack **a, int single);
-void		sb(t_stack **b, int single);
-void		ss(t_stack **a, t_stack **b);
-void		pb(t_stack **b, t_stack **a);
-void		pa(t_stack **a, t_stack **b);
-void		ra(t_stack **a, int single);
-void		rb(t_stack **b, int single);
-void		rr(t_stack **a, t_stack **b);
-void		rra(t_stack **a, int single);
-void		rrb(t_stack **b, int single);
-void		rrr(t_stack **a, t_stack **b);
+void		sa(t_stack **a, int print);
+void		sb(t_stack **b, int print);
+void		ss(t_stack **a, t_stack **b, int print);
+void		pb(t_stack **b, t_stack **a, int print);
+void		pa(t_stack **a, t_stack **b, int print);
+void		ra(t_stack **a, int print);
+void		rb(t_stack **b, int print);
+void		rr(t_stack **a, t_stack **b, int print);
+void		rra(t_stack **a, int print);
+void		rrb(t_stack **b, int print);
+void		rrr(t_stack **a, t_stack **b, int print);
 
 /* b_to_a */
 
@@ -83,7 +83,7 @@ int			ft_check_order(t_stack *stack);
 int			ft_check_double(t_stack *stack, int nbr);
 void		ft_set_index(t_stack **stack);
 t_stack		*ft_free_stack(t_stack *stack);
-t_stack		*ft_lst_add(t_stack **stack, int nbr);
+t_stack		*ft_lst_add_ps(t_stack **stack, int nbr);
 
 /* min_max */
 t_min		*ft_min(t_stack *stack);

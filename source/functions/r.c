@@ -12,7 +12,7 @@
 
 #include "../../push_swap.h"
 
-void	ra(t_stack **a, int single)
+void	ra(t_stack **a, int print)
 {
 	t_stack	*temp;
 
@@ -24,12 +24,12 @@ void	ra(t_stack **a, int single)
 		temp->next = NULL;
 		ft_lstadd_back(a, temp);
 		ft_set_index(a);
-		if (single)
+		if (print)
 			ft_printf("ra\n");
 	}
 }
 
-void	rb(t_stack **b, int single)
+void	rb(t_stack **b, int print)
 {
 	t_stack	*temp;
 
@@ -41,14 +41,15 @@ void	rb(t_stack **b, int single)
 		temp->next = NULL;
 		ft_lstadd_back(b, temp);
 		ft_set_index(b);
-		if (single)
+		if (print)
 			ft_printf("rb\n");
 	}
 }
 
-void	rr(t_stack **a, t_stack **b)
+void	rr(t_stack **a, t_stack **b, int print)
 {
 	ra(a, 0);
 	rb(b, 0);
-	ft_printf("rr\n");
+	if (print)
+		ft_printf("rr\n");
 }

@@ -21,7 +21,8 @@
 
 typedef struct s_list
 {
-	void			*content;
+	int				fd;
+	char			*content;
 	struct s_list	*next;
 }					t_list;
 
@@ -56,7 +57,7 @@ size_t				ft_strlen(const char *s);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strnstr(const char *big, const char *little,
 						size_t len);
-char				*ft_strrchr(const char *s, int c);
+//char				*ft_strrchr(const char *s, int c);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 int					ft_tolower(int c);

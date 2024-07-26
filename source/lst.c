@@ -81,7 +81,7 @@ t_stack	*ft_free_stack(t_stack *stack)
 	return (NULL);
 }
 
-t_stack	*ft_lst_add(t_stack **stack, int nbr)
+t_stack	*ft_lst_add_ps(t_stack **stack, int nbr)
 {
 	t_stack	*temp;
 	t_stack	*new;

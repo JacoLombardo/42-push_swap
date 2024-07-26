@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 14:40:01 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/25 15:33:55 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/26 12:26:58 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void	ft_move_stack(char *line, t_stack **a, t_stack **b)
 {
-	if (!ft_strncmp(line, "pa\n"))
+	if (!ft_strcmp(line, "pa\n"))
 		pa(b, a, 0);
-	else if (line == "pb\n")
+	else if (!ft_strcmp(line, "pb\n"))
 		pb(a, b, 0);
-	else if (line == "sa\n")
+	else if (!ft_strcmp(line, "sa\n"))
 		sa(a, 0);
-	else if (line == "sb\n")
+	else if (!ft_strcmp(line, "sb\n"))
 		sb(b, 0);
-	else if (line == "ss\n")
+	else if (!ft_strcmp(line, "ss\n"))
 		ss(a, b, 0);
-	else if (line == "ra\n")
+	else if (!ft_strcmp(line, "ra\n"))
 		ra(a, 0);
-	else if (line == "rb\n")
+	else if (!ft_strcmp(line, "rb\n"))
 		rb(b, 0);
-	else if (line == "rr\n")
+	else if (!ft_strcmp(line, "rr\n"))
 		rr(a, b, 0);
-	else if (line == "rra\n")
+	else if (!ft_strcmp(line, "rra\n"))
 		rra(a, 0);
-	else if (line == "rrb\n")
+	else if (!ft_strcmp(line, "rrb\n"))
 		rrb(b, 0);
-	else if (line == "rrr\n")
+	else if (!ft_strcmp(line, "rrr\n"))
 		rrr(a, b, 0);
 }
 
@@ -43,11 +43,12 @@ void	checker(t_stack *a)
 	t_stack	*b;
 	char	*line;
 
-	line = get_next_line(STDOUT_FILENO);
+	b = NULL;
+	line = get_next_line(STDIN_FILENO);
 	while (line)
 	{
 		ft_move_stack(line, &a, &b);
-		line = get_next_line(STDOUT_FILENO);
+		line = get_next_line(STDIN_FILENO);
 	}
 	if (ft_check_order(a))
 		write(STDOUT_FILENO, "OK\n", 3);

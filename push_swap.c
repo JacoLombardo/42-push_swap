@@ -25,8 +25,8 @@ void	push_swap(t_stack *a)
 		ft_sort_three(&a);
 	else
 	{
-		pb(&a, &b);
-		pb(&a, &b);
+		pb(&a, &b, 1);
+		pb(&a, &b, 1);
 		ft_sort_big(&a, &b);
 	}
 	ft_free_stack(a);

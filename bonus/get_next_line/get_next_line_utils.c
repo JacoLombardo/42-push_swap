@@ -6,13 +6,13 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:16:12 by jalombar          #+#    #+#             */
-/*   Updated: 2024/06/10 13:28:33 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/26 11:13:31 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strchr(char *s, int c)
+/* char	*ft_strchr(char *s, int c)
 {
 	int	i;
 	int	len;
@@ -30,7 +30,7 @@ char	*ft_strchr(char *s, int c)
 		i++;
 	}
 	return (NULL);
-}
+} */
 
 void	ft_free_buff(t_list **buff, int fd)
 {

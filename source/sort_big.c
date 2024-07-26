@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 14:57:00 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/25 14:17:17 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:59:04 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	ft_exec_moves(t_moves *moves, t_stack **a, t_stack **b)
 	while (moves->rrb--)
 		rrb(b, 1);
 	while (moves->rr--)
-		rr(a, b);
+		rr(a, b, 1);
 	while (moves->rrr--)
-		rrr(a, b);
+		rrr(a, b, 1);
 	if (moves->pb)
-		pb(a, b);
+		pb(a, b, 1);
 	else if (moves->pa)
-		pa(b, a);
+		pa(b, a, 1);
 }
 
 int	ft_find_index(t_stack *stack, t_stack *temp)

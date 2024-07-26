@@ -16,21 +16,28 @@ SRCS = checker.c checker_utils.c ../source/create_stack.c ../source/lst.c ../sou
 HEADER = checker.h
 NAME = checker
 GNL_PATH = get_next_line
-GNL = $(LIBFT_PATH)/get_next_line.a
+GNL = $(GNL_PATH)/libget_next_line.a
+LIBFT_PATH = ../libft
+LIBFT = $(LIBFT_PATH)/libft.a
 
 all: $(NAME)
 
-$(NAME): $(SRCS) $(GNL)
-	$(CC) $(CFLAGS) -o $@ $(SRCS) -L$(GNL_PATH) -lft
+$(NAME): $(SRCS) $(GNL) $(LIBFT)
+	$(CC) $(CFLAGS) -o $@ $(SRCS) -L$(GNL_PATH) -lget_next_line -L$(LIBFT_PATH) -lft
 
 $(GNL):
 	$(MAKE) -C $(GNL_PATH)
 
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_PATH)
+
 clean:
+	$(MAKE) -C $(LIBFT_PATH) clean
 	$(MAKE) -C $(GNL_PATH) clean
 
 fclean: clean
-	$(MAKE) -C $(GNL_PATH_PATH) fclean
+	$(MAKE) -C $(LIBFT_PATH) fclean
+	$(MAKE) -C $(GNL_PATH) fclean
 	rm -f $(NAME)
 
 re: fclean all

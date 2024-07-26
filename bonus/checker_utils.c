@@ -6,27 +6,22 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 14:41:28 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/25 15:32:34 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/26 12:27:04 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int	ft_strncmp(char *s1, char *s2, int n)
+int	ft_strcmp(char *str1, char *str2)
 {
 	int	i;
 
 	i = 0;
-	if (n > 0)
+	while (str1[i] || str2[i])
 	{
-		while (((unsigned char)s1[i] || (unsigned char)s2[i]) && i < n)
-		{
-			if ((unsigned char)s1[i] != (unsigned char)s2[i])
-			{
-				return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-			}
-			i++;
-		}
+		if (str1[i] != str2[i])
+			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+		i++;
 	}
 	return (0);
 }
@@ -48,8 +43,8 @@ t_stack	*ft_create_stack_checker(char *str, t_stack **a, int *stack_len)
 
 int	ft_handle_stack_checker(char *argv, t_stack **a)
 {
-	int		i;
-	int		stack_len;
+	int	i;
+	int	stack_len;
 
 	i = 1;
 	stack_len = 0;
