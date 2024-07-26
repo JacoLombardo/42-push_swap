@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 14:40:01 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/26 12:26:58 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/26 12:35:12 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ void	checker(t_stack *a)
 		line = get_next_line(STDIN_FILENO);
 	}
 	if (ft_check_order(a))
-		write(STDOUT_FILENO, "OK\n", 3);
+		ft_printf("OK\n");
 	else
-		write(STDOUT_FILENO, "KO\n", 3);
+		ft_printf("KO\n");
 }
 
 int	main(int argc, char **argv)
@@ -64,7 +64,7 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		if (!ft_handle_stack_checker(argv[1], &a))
-			write(1, "Error\n", 6);
+			ft_printf("Error\n");
 		else
 			checker(a);
 	}
