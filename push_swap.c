@@ -18,7 +18,10 @@ void	push_swap(t_stack *a)
 
 	b = NULL;
 	if (ft_check_order(a))
+	{
+		ft_free_stack(a);
 		return ;
+	}
 	else if (ft_lstsize(a) == 2)
 		sa(&a, 1);
 	else if (ft_lstsize(a) == 3)
@@ -26,7 +29,8 @@ void	push_swap(t_stack *a)
 	else
 	{
 		pb(&a, &b, 1);
-		pb(&a, &b, 1);
+		if (ft_lstsize(a) > 3)
+			pb(&a, &b, 1);
 		ft_sort_big(&a, &b);
 	}
 	ft_free_stack(a);

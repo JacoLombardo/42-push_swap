@@ -16,9 +16,10 @@ void	sa(t_stack **a, int print)
 {
 	t_stack	*temp;
 
-	temp = (*a)->next;
+	temp = NULL;
 	if (ft_lstsize(*a) > 1)
 	{
+		temp = (*a)->next;
 		(*a)->next = (*a)->next->next;
 		(*a)->index = 2;
 		temp->index = 1;
@@ -33,9 +34,10 @@ void	sb(t_stack **b, int print)
 {
 	t_stack	*temp;
 
-	temp = (*b)->next;
+	temp = NULL;
 	if (ft_lstsize(*b) > 1)
 	{
+		temp = (*b)->next;
 		(*b)->next = (*b)->next->next;
 		(*b)->index = 2;
 		temp->index = 1;
