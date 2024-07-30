@@ -2,6 +2,7 @@
 *.a
 push_swap
 checker
+checker_linux
 temp.txt
 test.sh
 under5500.txt
