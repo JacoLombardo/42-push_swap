@@ -6,11 +6,25 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 14:40:01 by jalombar          #+#    #+#             */
-/*   Updated: 2024/07/26 15:43:00 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/07/30 14:50:47 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
+int	ft_strcmp(char *str1, char *str2)
+{
+	int	i;
+
+	i = 0;
+	while (str1[i] || str2[i])
+	{
+		if (str1[i] != str2[i])
+			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+		i++;
+	}
+	return (0);
+}
 
 void	ft_move_stack(char *line, t_stack **a, t_stack **b)
 {
@@ -66,7 +80,7 @@ int	main(int argc, char **argv)
 	a = NULL;
 	if (argc > 1)
 	{
-		if (!ft_handle_stack_checker(argv[1], &a))
+		if (!ft_handle_stack(argv, argc, &a))
 			ft_printf("Error\n");
 		else
 			checker(a);

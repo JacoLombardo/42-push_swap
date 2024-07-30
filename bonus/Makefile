@@ -12,7 +12,7 @@
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
-SRCS = checker.c checker_utils.c ../source/create_stack.c ../source/lst.c ../source/functions/r.c ../source/functions/rr.c ../source/functions/s_p.c
+SRCS = checker.c ../source/create_stack.c ../source/lst.c ../source/functions/r.c ../source/functions/rr.c ../source/functions/s_p.c
 HEADER = checker.h
 NAME = checker
 GNL_PATH = get_next_line
